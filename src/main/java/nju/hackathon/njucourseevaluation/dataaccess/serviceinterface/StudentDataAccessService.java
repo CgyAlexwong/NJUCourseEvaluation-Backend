@@ -5,7 +5,7 @@ import nju.hackathon.njucourseevaluation.entity.Student;
 
 public interface StudentDataAccessService {
     Student GetStudentById(int id);
-    Student GetStudentByStudentByStudent_number(String studentNumber);
+    Student GetStudentByStudent_number(String studentNumber);
     Student InsertStudent(Integer id, String studentName, String studentNumber, CommentList commentList);
     Student UpdateStudentById(Integer id, String studentName, String studentNumber, CommentList commentList);
 }

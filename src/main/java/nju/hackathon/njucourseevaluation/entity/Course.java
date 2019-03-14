@@ -25,6 +25,7 @@ public class Course {
      * 4 阅读
      * 5 公选
      */
+
     @Column(name = "category")
     private int category;
 

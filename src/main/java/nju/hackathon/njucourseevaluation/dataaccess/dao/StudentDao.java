@@ -4,5 +4,5 @@ import nju.hackathon.njucourseevaluation.entity.Student;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface StudentDao extends JpaRepository<Student, Integer> {
-    Student findByStudentNumber(String studentNumber);
+    Student findStudentByStudentNumber(String studentNumber);
 }

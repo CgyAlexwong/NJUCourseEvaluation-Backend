@@ -16,21 +16,21 @@ public class StudentDataAccessServiceImpl implements StudentDataAccessService {
 
     @Override
     public Student GetStudentById(int id) {
-        return null;
+        return studentDao.findById(id).orElse(null);
     }
 
     @Override
-    public Student GetStudentByStudentByStudent_number(String studentNumber) {
-        return null;
+    public Student GetStudentByStudent_number(String studentNumber) {
+        return studentDao.findStudentByStudentNumber(studentNumber);
     }
 
     @Override
     public Student InsertStudent(Integer id, String studentName, String studentNumber, CommentList commentList) {
-        return null;
+        return studentDao.save(new Student(id, studentName, studentNumber, commentList));
     }
 
     @Override
     public Student UpdateStudentById(Integer id, String studentName, String studentNumber, CommentList commentList) {
-        return null;
+        return studentDao.save(new Student(id, studentName, studentNumber, commentList));
     }
 }
