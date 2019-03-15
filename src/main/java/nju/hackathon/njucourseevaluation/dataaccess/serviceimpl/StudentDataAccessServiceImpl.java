@@ -2,9 +2,11 @@ package nju.hackathon.njucourseevaluation.dataaccess.serviceimpl;
 
 import nju.hackathon.njucourseevaluation.dataaccess.dao.StudentDao;
 import nju.hackathon.njucourseevaluation.dataaccess.serviceinterface.StudentDataAccessService;
-import nju.hackathon.njucourseevaluation.entity.CommentList;
+import nju.hackathon.njucourseevaluation.entity.Comment;
 import nju.hackathon.njucourseevaluation.entity.Student;
 import org.springframework.beans.factory.annotation.Autowired;
+
+import java.util.List;
 
 public class StudentDataAccessServiceImpl implements StudentDataAccessService {
 
@@ -25,12 +27,12 @@ public class StudentDataAccessServiceImpl implements StudentDataAccessService {
     }
 
     @Override
-    public Student InsertStudent(Integer id, String studentName, String studentNumber, CommentList commentList) {
-        return studentDao.save(new Student(id, studentName, studentNumber, commentList));
+    public Student InsertStudent(Integer id, String studentName, String studentNumber, int terms) {
+        return studentDao.save(new Student(id, studentName, studentNumber,  terms));
     }
 
     @Override
-    public Student UpdateStudentById(Integer id, String studentName, String studentNumber, CommentList commentList) {
-        return studentDao.save(new Student(id, studentName, studentNumber, commentList));
+    public Student UpdateStudentById(Integer id, String studentName, String studentNumber, int terms) {
+        return studentDao.save(new Student(id, studentName, studentNumber, terms));
     }
 }

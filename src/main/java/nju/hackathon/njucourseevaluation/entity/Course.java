@@ -3,6 +3,7 @@ package nju.hackathon.njucourseevaluation.entity;
 import lombok.Getter;
 import lombok.Setter;
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Getter
@@ -32,17 +33,18 @@ public class Course {
     @Column(name = "rate")
     private Rate rate;
 
-    @Column(name = "commentlist")
-    private CommentList commentList;
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
+    @JoinColumn(name = "course_id")
+    private List<Comment> commentList;
 
     @Column(name = "description")
-    private String description;
+    private Description description;
 
     public Course(){
 
     }
 
-    public Course(Integer id, String course_id, int category, Rate rate, CommentList commentList, String description){
+    public Course(Integer id, String course_id, int category, Rate rate, List<Comment> commentList, Description description){
         this.id = id;
         this.course_id = course_id;
         this.category = category;

@@ -21,14 +21,22 @@ public class Student {
     private String studentNumber;
 
     @Column(name = "student_comment")
-    private CommentList commentList; //查看我以前的评价
+    private Comment commentList; //查看我以前的评价
+
+    @Column(name = "terms")
+    private int terms;
+
+//    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
+//    @JoinColumn(name = "student_id")
+//    private List<Course> courseList;
 
     public Student(){ }
 
-    public Student(Integer id, String studentName, String studentNumber, CommentList commentList){
+    public Student(Integer id, String studentName, String studentNumber, int terms){
         this.id = id;
         this.studentName = studentName;
         this.studentNumber = studentNumber;
-        this.commentList = commentList;
+        this.terms = terms;
+//        this.courseList = courseList;
     }
 }

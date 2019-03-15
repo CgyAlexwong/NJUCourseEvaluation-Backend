@@ -1,11 +1,13 @@
 spring:
   datasource:
-
-
+    url: jdbc:mysql://localhost:3306/helloWorld?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    username: root
+    password: Hbm717522.Hbm
+    driver-class-name: com.mysql.jdbc.Driver
   jpa:
     hibernate:
-          ddl-auto: update
-          naming:
-            physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+      ddl-auto: update
+      naming:
+        physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
 
     show-sql: true

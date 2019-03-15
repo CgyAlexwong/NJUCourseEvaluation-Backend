@@ -1,8 +1,13 @@
 package nju.hackathon.njucourseevaluation.bl.parameter.student;
 
-import nju.hackathon.njucourseevaluation.entity.CommentList;
+import lombok.Getter;
+import lombok.Setter;
+import nju.hackathon.njucourseevaluation.entity.Comment;
+import java.util.List;
 
+@Setter
+@Getter
 public class UpdateStudentByIdParameter {
     private int id;
-    CommentList commentList;
+    private List<Comment> commentList;
 }

@@ -8,10 +8,10 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "commentList")
+@Table(name = "comment")
 @Setter
 @Getter
-public class CommentList {
+public class Comment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
@@ -27,10 +27,13 @@ public class CommentList {
     @Column(name = "student_name")
     private String studentName;
 
+    @Column(name = "course_id")
+    private int courseId;
+
     //TODO 头像显示
 
-    public CommentList(){}
-    public CommentList(Integer id, String course, Date date, String studentName){
+    public Comment(){}
+    public Comment(Integer id, String course, Date date, String studentName){
         this.id = id;
         this.course = course;
         this.date = date;
